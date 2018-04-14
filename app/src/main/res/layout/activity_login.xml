@@ -98,6 +98,7 @@
             android:textAlignment="center"
             android:textColor="@drawable/selector_button_text_with_stroke"
             android:textSize="16sp"
+            android:onClick="loginClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
