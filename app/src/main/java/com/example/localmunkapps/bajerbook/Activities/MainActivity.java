@@ -1,7 +1,9 @@
-package com.example.localmunkapps.bajerbook;
+package com.example.localmunkapps.bajerbook.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.localmunkapps.bajerbook.R;
 
 public class MainActivity extends AppCompatActivity {
 

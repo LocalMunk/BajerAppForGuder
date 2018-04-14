@@ -1,7 +1,7 @@
 package com.example.localmunkapps.bajerbook.Database;
 
-import com.example.localmunkapps.bajerbook.DataFiles.SystemData;
-import com.example.localmunkapps.bajerbook.DataFiles.UserData;
+import com.example.localmunkapps.bajerbook.Models.SystemData;
+import com.example.localmunkapps.bajerbook.Models.UserData;
 
 /**
  * Created by marti on 11-04-2018.
