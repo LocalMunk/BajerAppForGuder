@@ -12,12 +12,13 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.example.localmunkapps.bajerbook.Activities.main.MainActivity
+import com.example.localmunkapps.bajerbook.Fragments.SignUpFragment
 import com.example.localmunkapps.bajerbook.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-    private val screenDimensions: DisplayMetrics
+    val screenDimensions: DisplayMetrics
         get() {
             val displayMetrics = DisplayMetrics()
             windowManager.defaultDisplay.getMetrics(displayMetrics)
@@ -28,11 +29,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        setupAnimation()
-
+        animateLogin()
     }
 
-    private fun setupAnimation() {
+    private fun animateLogin() {
 
         val animatorSet = AnimatorSet()
 
@@ -71,7 +71,8 @@ class LoginActivity : AppCompatActivity() {
 
     // sign up onClick
     fun signUpClick (v: View) {
-        
+        val fragment = SignUpFragment()
+        navigateToFragment(fragment, null, fragment.TAG, false)
     }
 
     fun navigateToFragment(fragment: Fragment, argument: Bundle?, backstackName: String?, animate: Boolean) {
@@ -83,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
 //                    R.anim.slide_in_right,
 //                    R.anim.slide_out_right)
 //        }
-        supFragMan.add(fragment, "")
+        supFragMan.add(loginContainer.id, fragment, backstackName)
         if (backstackName != null) {
             supFragMan.addToBackStack(backstackName)
         }
