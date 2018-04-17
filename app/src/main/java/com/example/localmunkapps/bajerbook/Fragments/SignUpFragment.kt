@@ -61,28 +61,33 @@ class SignUpFragment : BBFragment(), View.OnClickListener{
                 if (start) 0f else 1f,
                 if (start) 1f else 0f
         )
-        backgroundAlphaAnimation.duration = 200
+        backgroundAlphaAnimation.duration = 375
 
         val dialogScaleXAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_X,
                 if (start) 0.8f else 1f,
                 if (start) 1f else 0.8f)
-        dialogScaleXAnimation.duration = 200
+        dialogScaleXAnimation.duration = 375
         dialogScaleXAnimation.interpolator = FastOutSlowInInterpolator()
 
         val dialogScaleYAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_Y,
                 if (start) 0.8f else 1f,
                 if (start) 1f else 0.8f
         )
-        dialogScaleYAnimation.duration = 200
+        dialogScaleYAnimation.duration = 375
         dialogScaleYAnimation.interpolator = FastOutSlowInInterpolator()
 
         val dialogAlphaAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.ALPHA,
                 if (start) 0f else 1f,
                 if (start) 1f else 0f)
-        dialogAlphaAnimation.duration = 200
+        dialogAlphaAnimation.duration = 375
         dialogAlphaAnimation.interpolator = FastOutSlowInInterpolator()
 
-        animationSet.playTogether(backgroundAlphaAnimation, dialogAlphaAnimation, dialogScaleXAnimation, dialogScaleYAnimation)
+        animationSet.playTogether(
+                backgroundAlphaAnimation,
+                dialogAlphaAnimation,
+                dialogScaleXAnimation,
+                dialogScaleYAnimation
+        )
         animationSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator?) {
                 super.onAnimationEnd(animation)

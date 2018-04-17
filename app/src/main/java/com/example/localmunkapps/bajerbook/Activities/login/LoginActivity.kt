@@ -45,16 +45,13 @@ class LoginActivity : BBActivity() {
         transitionAnimation.duration = 1000
 
         // logo animation
-        val logoAnimationDuration = 1000L
-        val logoStartDelay = 200L
+        val logoAnimationDuration = 1500L
 
         val logoAlphaAnimation = ObjectAnimator.ofFloat(loginLogo, View.ALPHA, 0f, 1f)
         logoAlphaAnimation.duration = logoAnimationDuration
-        logoAlphaAnimation.startDelay = logoStartDelay
 
         val logoTransitionAnimation = ObjectAnimator.ofFloat(loginLogo, View.TRANSLATION_Y, -200f, 0f)
         logoTransitionAnimation.duration = logoAnimationDuration
-        logoTransitionAnimation.startDelay = logoStartDelay
 
         // play animations parallel
         animatorSet.playTogether(transitionAnimation, logoAlphaAnimation, logoTransitionAnimation)
