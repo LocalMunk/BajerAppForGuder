@@ -11,12 +11,13 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.example.localmunkapps.bajerbook.Activities.BBActivity
 import com.example.localmunkapps.bajerbook.Activities.main.MainActivity
 import com.example.localmunkapps.bajerbook.Fragments.SignUpFragment
 import com.example.localmunkapps.bajerbook.R
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BBActivity() {
 
     val screenDimensions: DisplayMetrics
         get() {

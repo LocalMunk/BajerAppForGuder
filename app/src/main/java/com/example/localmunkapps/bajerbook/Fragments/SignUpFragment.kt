@@ -15,7 +15,7 @@ import com.example.localmunkapps.bajerbook.R
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
-class SignUpFragment : Fragment(), View.OnClickListener{
+class SignUpFragment : BBFragment(), View.OnClickListener{
 
     val TAG = "SignUpFragment"
 
@@ -47,6 +47,11 @@ class SignUpFragment : Fragment(), View.OnClickListener{
             else -> { // nothing to do
             }
         }
+    }
+
+    override fun handlesOnBackPressed(): Boolean {
+        animateSignUp(false)
+        return true
     }
 
     private fun animateSignUp(start: Boolean = true) {
