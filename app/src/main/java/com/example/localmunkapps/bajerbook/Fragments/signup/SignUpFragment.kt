@@ -1,18 +1,17 @@
-package com.example.localmunkapps.bajerbook.Fragments
+package com.example.localmunkapps.bajerbook.Fragments.signup
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.localmunkapps.bajerbook.Activities.login.LoginActivity
+import com.example.localmunkapps.bajerbook.Fragments.BBFragment
 import com.example.localmunkapps.bajerbook.R
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class SignUpFragment : BBFragment(), View.OnClickListener{

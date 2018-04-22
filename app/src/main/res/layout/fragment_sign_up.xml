@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backgroundDarkWithTransparency"
-    tools:context=".Fragments.SignUpFragment"
+    tools:context=".Fragments.signup.SignUpFragment"
     android:id="@+id/signUpContainer"
     android:clickable="true">
 
@@ -52,7 +52,8 @@
                 android:inputType="text"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -71,7 +72,8 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -90,7 +92,8 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"/>
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -100,7 +103,7 @@
             android:background="@drawable/selector_button_primary"
             android:textColor="@color/colorTextWhite"
             android:layout_width="@dimen/shared_dialog_button_primary_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/shared_dialog_button_primary_height"
             android:layout_marginBottom="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +117,7 @@
             android:background="@null"
             android:textColor="@drawable/selector_button_text_plain"
             android:layout_width="@dimen/shared_dialog_button_secondary_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/shared_dialog_button_secondary_height"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/signUpActionPrimary"

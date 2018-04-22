@@ -2,29 +2,17 @@ package com.example.localmunkapps.bajerbook.Activities.login
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.view.animation.FastOutSlowInInterpolator
-import android.util.DisplayMetrics
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import com.example.localmunkapps.bajerbook.Activities.BBActivity
 import com.example.localmunkapps.bajerbook.Activities.main.MainActivity
-import com.example.localmunkapps.bajerbook.Fragments.SignUpFragment
+import com.example.localmunkapps.bajerbook.Fragments.signup.SignUpFragment
 import com.example.localmunkapps.bajerbook.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BBActivity() {
-
-    val screenDimensions: DisplayMetrics
-        get() {
-            val displayMetrics = DisplayMetrics()
-            windowManager.defaultDisplay.getMetrics(displayMetrics)
-            return displayMetrics
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,31 +58,11 @@ class LoginActivity : BBActivity() {
     // sign up onClick
     fun signUpClick (v: View) {
         val fragment = SignUpFragment()
-        navigateToFragment(fragment, null, fragment.TAG, false)
+        navigateToFragment(fragment, null, fragment.TAG)
     }
 
-    fun navigateToFragment(fragment: Fragment, argument: Bundle?, backstackName: String?, animate: Boolean) {
-        fragment.arguments = argument
-        val supFragMan = supportFragmentManager.beginTransaction()
-//        if (animate) {
-//            supFragMan.setCustomAnimations(R.anim.slide_in_left,
-//                    R.anim.slide_out_left,
-//                    R.anim.slide_in_right,
-//                    R.anim.slide_out_right)
-//        }
-        supFragMan.add(loginContainer.id, fragment, backstackName)
-        if (backstackName != null) {
-            supFragMan.addToBackStack(backstackName)
-        }
-        supFragMan.commit()
-        hideKeyboard(this)
-    }
 
-    fun hideKeyboard(activity: Activity) {
-        if (activity.currentFocus == null) return
 
-        val imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(activity.currentFocus.windowToken, 0)
-    }
+
 
 }
