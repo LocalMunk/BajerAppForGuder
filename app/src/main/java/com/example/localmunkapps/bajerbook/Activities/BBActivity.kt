@@ -1,6 +1,7 @@
 package com.example.localmunkapps.bajerbook.Activities
 
 import android.support.v7.app.AppCompatActivity
+import com.example.localmunkapps.bajerbook.Activities.login.LoginActivity
 import com.example.localmunkapps.bajerbook.Activities.main.MainActivity
 import com.example.localmunkapps.bajerbook.Fragments.BBFragment
 
@@ -10,6 +11,11 @@ abstract class BBActivity : AppCompatActivity() {
     get() {
         return this as? MainActivity
     }
+
+    var loginActivity: BBActivity? = null
+        get() {
+            return this as? LoginActivity
+        }
 
     override fun onBackPressed() {
 
