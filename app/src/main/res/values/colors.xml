@@ -14,4 +14,8 @@
     <color name="colorDivider">#BDBDBD</color>
 
     <color name="backgroundDarkWithTransparency">#cc000000</color>
+
+    <!-- Button colors -->
+    <color name="button_primary_text_color">@color/colorTextWhite</color>
+
 </resources>

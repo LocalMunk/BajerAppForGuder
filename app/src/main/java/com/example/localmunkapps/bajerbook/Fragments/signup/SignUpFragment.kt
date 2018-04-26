@@ -62,18 +62,18 @@ class SignUpFragment : BBFragment(), View.OnClickListener{
         )
         backgroundAlphaAnimation.duration = 375
 
-        val dialogScaleXAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_X,
-                if (start) 0.8f else 1f,
-                if (start) 1f else 0.8f)
-        dialogScaleXAnimation.duration = 375
-        dialogScaleXAnimation.interpolator = FastOutSlowInInterpolator()
-
-        val dialogScaleYAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_Y,
-                if (start) 0.8f else 1f,
-                if (start) 1f else 0.8f
-        )
-        dialogScaleYAnimation.duration = 375
-        dialogScaleYAnimation.interpolator = FastOutSlowInInterpolator()
+//        val dialogScaleXAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_X,
+//                if (start) 0.8f else 1f,
+//                if (start) 1f else 0.8f)
+//        dialogScaleXAnimation.duration = 375
+//        dialogScaleXAnimation.interpolator = FastOutSlowInInterpolator()
+//
+//        val dialogScaleYAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.SCALE_Y,
+//                if (start) 0.8f else 1f,
+//                if (start) 1f else 0.8f
+//        )
+//        dialogScaleYAnimation.duration = 375
+//        dialogScaleYAnimation.interpolator = FastOutSlowInInterpolator()
 
         val dialogAlphaAnimation = ObjectAnimator.ofFloat(signUpDialogContainer, View.ALPHA,
                 if (start) 0f else 1f,
@@ -82,10 +82,10 @@ class SignUpFragment : BBFragment(), View.OnClickListener{
         dialogAlphaAnimation.interpolator = FastOutSlowInInterpolator()
 
         animationSet.playTogether(
+//                dialogScaleXAnimation,
+//                dialogScaleYAnimation,
                 backgroundAlphaAnimation,
-                dialogAlphaAnimation,
-                dialogScaleXAnimation,
-                dialogScaleYAnimation
+                dialogAlphaAnimation
         )
         animationSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator?) {

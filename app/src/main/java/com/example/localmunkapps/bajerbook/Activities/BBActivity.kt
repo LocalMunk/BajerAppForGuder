@@ -14,10 +14,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 abstract class BBActivity : AppCompatActivity() {
 
-    val currentFrag: Fragment
+    val currentFrag: Fragment?
     get() {
         val fragments = supportFragmentManager.fragments
-        return fragments[fragments.size -1]
+        return if (fragments.size > 0) {
+            fragments[fragments.size - 1]
+        } else {
+            null
+        }
     }
 
     val screenDimensions: DisplayMetrics
@@ -37,7 +41,7 @@ abstract class BBActivity : AppCompatActivity() {
             return this as? LoginActivity
         }
 
-    fun navigateToFragment(fragment: Fragment, argument: Bundle?, backStackName: String?, shouldReplace: Boolean? = true) {
+    fun navigateToFragment(fragment: Fragment, argument: Bundle?, backStackName: String, shouldAddToBackStack: Boolean? = true) {
 
         fragment.arguments = argument
         val supFragMan = supportFragmentManager.beginTransaction()
@@ -52,7 +56,7 @@ abstract class BBActivity : AppCompatActivity() {
 
         fragmentContainer?.let { supFragMan.add(fragmentContainer, fragment, backStackName) }
 
-        if (backStackName != null) {
+        if (shouldAddToBackStack == true) {
             supFragMan.addToBackStack(backStackName)
         }
         supFragMan.commit()
@@ -68,13 +72,10 @@ abstract class BBActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
 
-        if (supportFragmentManager.fragments.isEmpty()) {
-            return super.onBackPressed()
-        }
-
         if (currentFrag is BBFragment && (currentFrag as? BBFragment)?.handlesOnBackPressed() == true) {
             return
         }
+        return super.onBackPressed()
     }
 
 }
