@@ -18,5 +18,5 @@ public class DatabaseController {
 
         return null;
     }
-    // Swagh Lord fuck boywdawd aw
+    // Swagh Lord  NEMT
 }
