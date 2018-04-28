@@ -1,11 +1,13 @@
 package com.example.localmunkapps.bajerbook.Activities
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.example.localmunkapps.bajerbook.Activities.login.LoginActivity
 import com.example.localmunkapps.bajerbook.Activities.main.MainActivity
 import com.example.localmunkapps.bajerbook.Fragments.BBFragment
@@ -61,6 +63,10 @@ abstract class BBActivity : AppCompatActivity() {
         }
         supFragMan.commit()
         hideKeyboard(this)
+    }
+
+    fun makeToast(context: Context, message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun hideKeyboard(activity: Activity) {
